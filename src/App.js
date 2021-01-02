@@ -1,12 +1,12 @@
-import logo from './logo.svg';
+import HomePage from './hompage-component'
 import './App.css';
 
 function App() {
   return (
     <div>
-      Hello world 
+      <HomePage />
     </div>
   );
 } 
 
-export default App;
+export default App; 
