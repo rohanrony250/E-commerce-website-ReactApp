@@ -11,32 +11,32 @@ class MenuComponent extends React.Component
         {
             items: [
                 {
-                    title: 'HATS',
+                    title: 'hats',
                     imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
                     id: 1,
                     linkUrl: 'shop/hats'
                 },
                 {
-                    title: 'JACKETS',
+                    title: 'jackets',
                     imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
                     id: 2,
                     linkUrl: 'shop/jackets'
                 },
                 {
-                    title: 'SNEAKERS',
+                    title: 'sneakers',
                     imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
                     id: 3,
                     linkUrl: 'shop/sneakers'
                 },
                 {
-                    title: 'WOMEN',
+                    title: 'women',
                     imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
                     size: 'large',
                     id: 4,
                     linkUrl: 'shop/womens'
                 },
                 {
-                    title: 'MEN',
+                    title: 'men',
                     imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
                     size: 'large',
                     id: 5,
