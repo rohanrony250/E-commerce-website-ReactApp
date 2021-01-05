@@ -13,7 +13,7 @@ const HatsPage = () =>
 function App() {
   return (
     <div>
-      <Route exact path component={HomePage}/>
+      <Route exact path='/' component={HomePage}/>
     </div>
   );
 } 
