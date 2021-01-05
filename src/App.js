@@ -1,4 +1,6 @@
-import HomePage from './pages/homepage/homepage-component'
+import HomePage from './pages/homepage/homepage-component';
+import {Route} from 'react-router-dom';
+
 import './App.css';
 
 function App() {
