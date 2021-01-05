@@ -3,10 +3,17 @@ import {Route} from 'react-router-dom';
 
 import './App.css';
 
+const HatsPage = () =>
+(
+  <div>
+    <h1>HATS PAGE</h1>
+  </div>
+)
+
 function App() {
   return (
     <div>
-      <HomePage />
+      <Route exact path component/>
     </div>
   );
 } 
