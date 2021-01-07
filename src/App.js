@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route exact={true} path='/' component={HomePage}/> 
+        <Route exact path='/' component={HomePage}/> 
         {/*here only {HomePage} gets access to props of route and not its children, to solve issue we use withRouter() */}
         <Route path='/hats' component={HatsPage}/>  
       </Switch>
