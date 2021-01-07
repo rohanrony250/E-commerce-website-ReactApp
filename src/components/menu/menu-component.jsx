@@ -42,7 +42,7 @@ class MenuComponent extends React.Component
                     id: 5,
                     linkUrl: ''
                 }
-            ]
+            ] 
         }
     }
 
