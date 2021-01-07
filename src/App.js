@@ -1,5 +1,5 @@
 import HomePage from './pages/homepage/homepage-component';
-import {Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 
 import './App.css';
 
@@ -14,10 +14,13 @@ const HatsPage = () =>
 function App() {
   return (
     <div>
-      <Route exact={true} path='/' component={HomePage}/>
-      <Route path='/' component={HatsPage}/>
+      <Switch>
+        <Route exact={true} path='/' component={HomePage}/> 
+        {/*here only {HomePage} gets access to props of route and not its children, to solve issue we use withRouter() */}
+        <Route path='/hats' component={HatsPage}/>  
+      </Switch>
     </div>
-  );
+  ); 
 } 
 
 export default App; 
