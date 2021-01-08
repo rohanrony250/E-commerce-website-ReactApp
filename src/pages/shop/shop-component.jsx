@@ -1,6 +1,6 @@
 import React from 'react'
 import SHOP_ITEMS from './shop-items'
-class shop extends React.Component
+class Shop_component extends React.Component
 {
     constructor(props)
     {
@@ -10,4 +10,13 @@ class shop extends React.Component
         }
         
     }
+
+    render()
+    {
+        return(
+            <div>Shop Page Loading...</div>
+        )
+    }
 }
+
+export default Shop_component
