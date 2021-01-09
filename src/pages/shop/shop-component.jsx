@@ -1,6 +1,6 @@
 import React from 'react'
 import SHOP_ITEMS from './shop-items'
-import CollectionPreview from '../../components/shop-collection/shop-collection.component'
+import CollectionPreview from '../../components/shop-collection/shop-collection-preview'
 class Shop_component extends React.Component
 {
     constructor(props)

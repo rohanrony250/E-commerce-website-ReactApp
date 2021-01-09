@@ -1,6 +1,6 @@
 import React from 'react'
 import './shop-collection.styles.scss'
-
+import CollectionItem from '../collection-item/collection-item.component'
 const CollectionPreview = ({title,items}) =>
 (
     <div className='collection-preview'>
@@ -17,8 +17,8 @@ const CollectionPreview = ({title,items}) =>
                 //     2. index of element (idx)
                 //     3. array object being traversed.
                 
-                .map(item => (
-                    <div key={item.id}>{item.name}</div>
+                .map(({id, ...otherItemProps}) => ( 
+                    <CollectionItem key={id} {...otherItemProps} />
             ))}
         </div>
     </div>
