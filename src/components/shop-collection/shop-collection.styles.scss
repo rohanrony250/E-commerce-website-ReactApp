@@ -1,18 +1,20 @@
-.collection-preview {
+.collection-preview 
+{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
   
-    .title {
+    .title 
+    {
       font-size: 28px;
       margin-bottom: 25px;
     }
   
-    .preview {
+    .preview 
+    {
       display: flex;
       justify-content: space-between;
-    
-    
     }
-  }
+
+}
   
