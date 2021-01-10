@@ -3,7 +3,7 @@ import './login-styles.scss'
 
 const LoginPage = () =>
 (
-    <div className='login'></div>
+    <div className='login'>SIGN IN</div>
 )
 
 export default LoginPage
