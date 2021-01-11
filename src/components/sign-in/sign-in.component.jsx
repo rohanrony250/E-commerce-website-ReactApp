@@ -1,7 +1,7 @@
 import React from 'react';
 import './sign-in.styles.scss';
 import FormInput from '../form-input/form-input.component';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import CustomButton from '../custom-button/custom-button.component';
 
 
 class SignIn extends React.Component
@@ -56,7 +56,7 @@ class SignIn extends React.Component
                         required 
                     />
                     
-                    <button className='btn btn-outline-dark btn-block'>LOGIN</button>
+                    <CustomButton type='submit'>LOGIN</CustomButton>
                     
                 </form>
             </div>

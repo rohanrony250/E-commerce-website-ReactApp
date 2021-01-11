@@ -3,6 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 import Shop_Component from './pages/shop/shop-component';
 import LoginPage from './pages/login/login-component';
 import HeaderComponent from './components/header/header-component';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
