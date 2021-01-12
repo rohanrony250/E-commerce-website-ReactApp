@@ -55,11 +55,13 @@ class SignIn extends React.Component
                         label='Password'
                         required 
                     />
-                    
-                    <CustomButton type='submit' styles='btn btn-outline-success btn-block'>LOGIN</CustomButton>
-                    <CustomButton onClick={LoginWithGoogle} styles='btn btn-outline-primary btn-block'>LOGIN WITH GOOGLE</CustomButton>
-                    
+                    <div className='buttons'>
+                        <CustomButton type='submit' styles='btn btn-outline-success button-1'>LOGIN</CustomButton>  
+                        <CustomButton onClick={LoginWithGoogle} type='button' styles='btn btn-outline-primary'>LOGIN WITH GOOGLE</CustomButton>    
+                    </div> 
+
                 </form>
+
             </div>
         )
     }
