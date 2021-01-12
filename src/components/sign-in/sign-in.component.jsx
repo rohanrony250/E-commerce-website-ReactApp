@@ -2,7 +2,7 @@ import React from 'react';
 import './sign-in.styles.scss';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
-
+import {LoginWithGoogle} from '../../Firebase/firebase-utils';
 
 class SignIn extends React.Component
 {
@@ -33,7 +33,7 @@ class SignIn extends React.Component
         return(
             <div className='sign-in'>
                 
-                <h3>I already have an account</h3>
+                <h3 className='title'>I already have an account</h3>
                 <span>Sign-In with existing account</span>
 
             
@@ -56,7 +56,8 @@ class SignIn extends React.Component
                         required 
                     />
                     
-                    <CustomButton type='submit'>LOGIN</CustomButton>
+                    <CustomButton type='submit' styles='btn btn-outline-success btn-block'>LOGIN</CustomButton>
+                    <CustomButton onClick={LoginWithGoogle} styles='btn btn-outline-primary btn-block'>LOGIN WITH GOOGLE</CustomButton>
                     
                 </form>
             </div>

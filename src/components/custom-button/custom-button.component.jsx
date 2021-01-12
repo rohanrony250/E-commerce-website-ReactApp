@@ -3,7 +3,7 @@ import './custom-button.styles.scss';
 
 const CustomButton = ({children,...otherProps}) =>
 (
-    <button className='btn btn-outline-success btn-block' {...otherProps}>
+    <button {...otherProps} className={`${otherProps.styles}`}>
         {children}
     </button>
 )

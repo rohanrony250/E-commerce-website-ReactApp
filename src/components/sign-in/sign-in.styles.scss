@@ -1,7 +1,13 @@
 .sign-in
 {
-    width: 20vw;
+    width: 30vw;
     position: relative;
-    top: 100px;
-    left: 350px;
+    top: 5em;
+    left: 20em;
+
+    .title
+    {
+        margin-bottom: 20px;
+    }
 }
+
