@@ -14,6 +14,36 @@ const config =
     measurementId: "G-R1HMPV18PV"
 };
 
+export const createUserProfileDocument = async ( userAuth, additionalData ) =>
+{
+    if(!userAuth) return;
+
+    const userRef = firestore.doc(`users/${userAuth.uid}`); //userAuth.uid gives access to unique id firebase authenticates a certain sign-in account with.
+    const snapShot = await userRef.get();
+    
+    if(!snapShot.exists)
+    {
+        const { displayName, email } = userAuth; //from userAuth we are destructuring name and email , userAuth is authstate object from componentDidMount().
+        const createdAt = new Date();
+
+
+        try
+        {
+            await userRef.set({
+                displayName,email,createdAt,...additionalData        // .set() method creates data using the document reference
+            })
+        }
+        
+        catch(err)
+        
+        {
+            console.log('Error creating user', err.message);
+        }
+    }
+
+    return userRef;
+}
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth(); //we got access to .auth() method from 3rd import 
