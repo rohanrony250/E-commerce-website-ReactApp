@@ -55,11 +55,11 @@ class SignUp extends React.Component
         const { displayName, email, password, confirmpassword } = this.state;
         return(
             <div className='sign-up'>
-                <h2 className='title'>
+                <h3 className='title'>
                     
                     I do not have an account                
                 
-                </h2>
+                </h3>
                 <span>
                     Sign up with your email and password
                 </span>
