@@ -65,7 +65,7 @@ class App extends React.Component
   {
     return (
       <div>
-        <HeaderComponent currentUser={this.state.currentUser} />
+        <HeaderComponent  />
         <Switch>
           <Route exact path='/' component={HomePage}/> 
           {/*here only {HomePage} gets access to props of route and not its children, to solve issue we use withRouter() */}

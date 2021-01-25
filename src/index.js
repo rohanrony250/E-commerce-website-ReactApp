@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom';
 import { Provider } from 'react-redux'; //object that gives access to redux store and reducers must be parent component of our application.
+import store from './redux/store';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>    
