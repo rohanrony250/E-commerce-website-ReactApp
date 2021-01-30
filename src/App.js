@@ -1,6 +1,6 @@
 import React from 'react';
 import HomePage from './pages/homepage/homepage-component';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import Shop_Component from './pages/shop/shop-component';
 import LoginPage from './pages/login/login-component';
 import HeaderComponent from './components/header/header-component';
@@ -24,13 +24,13 @@ class App extends React.Component
       {
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot(snapShot =>{
-          setCurrentUser({
+          setCurrentUser(
+            {
             
               id: snapShot.id,
               ...snapShot.data()
 
-            
-          },()=>{
+            },()=>{
             console.log(this.state)
           })
 
@@ -63,12 +63,19 @@ class App extends React.Component
           <Route exact path='/' component={HomePage}/> 
           {/*here only {HomePage} gets access to props of route and not its children, to solve issue we use withRouter() */}
           <Route path='/shop' component={Shop_Component}/> 
-          <Route path='/login' component={LoginPage}/>
+          <Route exact path='/login' render={() => this.props.currentUser ? <Redirect to ='/'/> : <LoginPage/> } />
         </Switch>
       </div>
     ); 
   }
 } 
+
+const mapStateToProps = ({ user }) =>
+(
+  {
+    currentUser: user.currentUser
+  }
+)
 
 const mapDispatchToProps = dispatch =>
 (
@@ -77,4 +84,4 @@ const mapDispatchToProps = dispatch =>
   }
 )
 
-export default connect(null, mapDispatchToProps)(App); 
+export default connect(mapStateToProps, mapDispatchToProps)(App); 
