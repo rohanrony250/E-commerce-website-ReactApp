@@ -1,3 +1,7 @@
+# E-commerce(REACT APP)
+
+A fully fledged react app for E-commerce
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
