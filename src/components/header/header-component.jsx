@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { auth } from '../../Firebase/firebase-utils';
 import CartComponent from '../cart-component/cart-icon-component';
 import CartDropdown from '../cart-dropdown/cart-dropdown-component';
-const HeaderComponent = ({ currentUser }) =>
+const HeaderComponent = ({ currentUser, hidden}) =>
 (
     <div className='header'>
         <Link to='/' className='logo-container'>
@@ -36,13 +36,17 @@ const HeaderComponent = ({ currentUser }) =>
             <CartComponent/>
             
         </div>
-        <CartDropdown/>
+        
+        {   hidden ? null : <CartDropdown/> }
+        
+
     </div>
 )
 
-const mapStateToProps = state => (
+const mapStateToProps = ({user:{currentUser}, cart: {hidden}}) => (
     {
-        currentUser: state.user.currentUser
+        currentUser,
+        hidden
     }
 )
 
