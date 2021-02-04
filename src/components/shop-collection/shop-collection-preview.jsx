@@ -9,16 +9,15 @@ const CollectionPreview = ({title,items}) =>
         </h1>
         <div className='preview'>
             {
-                items
-                .filter((item,idx) => idx < 4) 
+                items.filter((item,idx) => idx < 4) 
                 
                 // filter() has callback with three arguments by default:
                 //     1. value of element (item)
                 //     2. index of element (idx)
                 //     3. array object being traversed.
                 
-                .map(({id, ...otherItemProps}) => ( 
-                    <CollectionItem key={id} {...otherItemProps} />
+                .map((item) => ( 
+                    <CollectionItem key={item.id} item={item} />
             ))}
         </div>
     </div>
