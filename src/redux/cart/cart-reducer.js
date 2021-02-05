@@ -1,4 +1,5 @@
 import {CartActionTypes} from './cart-types'
+import {addItemToCart} from './cart-utils'
 
 const INITIAL_STATE ={
 
@@ -21,7 +22,7 @@ const CartReducer = (currentState = INITIAL_STATE, action) =>
             return{
 
                 ...currentState,
-                cartItems : [...currentState.cartItems , action.payload] 
+                cartItems : addItemToCart(currentState.cartItems , action.payload) 
             }
         default:
             return currentState; 
