@@ -12,12 +12,13 @@ export const addItemToCart = (cartItems, cartItemToAdd) =>
             ?
             {
                 ...cartItem,
-                quantity: cartItem.quantity + 1
+                quantity: cartItem.quantity+1
             }
             :
             {
-                cartItem
-            }
+                ...cartItem
+            }    
+            
         )
     }
     else
