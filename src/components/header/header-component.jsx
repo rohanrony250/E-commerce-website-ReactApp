@@ -6,6 +6,9 @@ import { connect } from 'react-redux';
 import { auth } from '../../Firebase/firebase-utils';
 import CartComponent from '../cart-component/cart-icon-component';
 import CartDropdown from '../cart-dropdown/cart-dropdown-component';
+import { createStructuredSelector } from 'reselect'
+import { selectCurrentUser } from '../../redux/user/user-selector'
+import { selectCartToggle } from '../../redux/cart/cart-selector'
 const HeaderComponent = ({ currentUser, hidden}) =>
 (
     <div className='header'>
@@ -43,11 +46,13 @@ const HeaderComponent = ({ currentUser, hidden}) =>
     </div>
 )
 
-const mapStateToProps = ({user:{currentUser}, cart: {hidden}}) => (
+const mapStateToProps = createStructuredSelector(
     {
-        currentUser,
-        hidden
+        currentUser: selectCurrentUser,
+        hidden: selectCartToggle
     }
 )
+
+// can also use 'state' instead of createstructuredselector like mapStateToProps = state => ({currentUser: selectCurrentUser(state)}) like in previous methods , but the above method reduces rewriting of codes.
 
 export default connect(mapStateToProps)(HeaderComponent)

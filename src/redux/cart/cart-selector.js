@@ -10,7 +10,9 @@ export const selectCartItems = createSelector([selectCart],(cart) =>
 
 ) 
 
-// the second variable 'cart' is what is being accessed in selectCart, similar method shown below.
+export const selectCartToggle = createSelector([selectCart],(toggle) => toggle.hidden)
+
+// the second variable 'cart, toggle' is what is being accessed in selectCart, similar method shown below.
 
 export const selectCartCount = createSelector([selectCartItems],cartItems =>
 
