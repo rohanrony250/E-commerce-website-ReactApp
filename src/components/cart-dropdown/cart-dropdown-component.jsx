@@ -3,6 +3,7 @@ import CustomButton from '../custom-button/custom-button.component'
 import './cart-dropdown-styles.scss'
 import { connect } from 'react-redux'
 import CartItem from '../cart-item/cart-item.component'
+import CheckoutComponent  from '../../pages/checkout/checkout-component'
 import { selectCartItems } from '../../redux/cart/cart-selector'
 
 const CartDropdown = ({ cartItems }) =>
@@ -26,7 +27,7 @@ const CartDropdown = ({ cartItems }) =>
             }
         </div> 
           
-        <CustomButton type='button' styles='btn btn-dark button'>GO TO CHECKOUT</CustomButton>
+        <CustomButton type='button' styles='btn btn-dark button' onClick = {CheckoutComponent}>GO TO CHECKOUT</CustomButton>
     </div>
 )
 
