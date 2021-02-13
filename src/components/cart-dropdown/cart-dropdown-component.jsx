@@ -2,11 +2,14 @@ import React from 'react'
 import CustomButton from '../custom-button/custom-button.component'
 import './cart-dropdown-styles.scss'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import CartItem from '../cart-item/cart-item.component'
 import CheckoutComponent  from '../../pages/checkout/checkout-component'
 import { selectCartItems } from '../../redux/cart/cart-selector'
 
-const CartDropdown = ({ cartItems }) =>
+
+// since withRouter is enabled we can now use history.push method
+const CartDropdown = ({ cartItems, history }) =>
 (
     <div className='cart-dropdown'>
         <div className='cart-items'>
@@ -27,7 +30,7 @@ const CartDropdown = ({ cartItems }) =>
             }
         </div> 
           
-        <CustomButton type='button' styles='btn btn-dark button' onClick = {CheckoutComponent}>GO TO CHECKOUT</CustomButton>
+        <CustomButton type='button' styles='btn btn-dark button' onClick = {()=> history.push('/checkout')}>GO TO CHECKOUT</CustomButton>
     </div>
 )
 
@@ -40,5 +43,7 @@ const mapStateToProps = state =>
     
 )
 // ({ cart: { cartItems } }) , without selector
-export default connect(mapStateToProps)(CartDropdown)
+export default withRouter(connect(mapStateToProps)(CartDropdown))
+
+// withRouter gets the components from cartdropdown and to which history match and 'params' are passed into, therefore order of wrapping matters.
 

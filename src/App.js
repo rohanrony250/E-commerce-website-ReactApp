@@ -3,6 +3,7 @@ import HomePage from './pages/homepage/homepage-component';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import Shop_Component from './pages/shop/shop-component';
 import LoginPage from './pages/login/login-component';
+import CheckoutComponent from './pages/checkout/checkout-component';
 import HeaderComponent from './components/header/header-component';
 import { auth, createUserProfileDocument} from './Firebase/firebase-utils';
 import { connect } from 'react-redux'
@@ -64,7 +65,8 @@ class App extends React.Component
         <Switch>
           <Route exact path='/' component={HomePage}/> 
           {/*here only {HomePage} gets access to props of route and not its children, to solve issue we use withRouter() */}
-          <Route path='/shop' component={Shop_Component}/> 
+          <Route path='/shop' component={Shop_Component}/>
+          <Route exact path='/checkout' component={CheckoutComponent}/>  
           <Route exact path='/login' render={() => this.props.currentUser ? <Redirect to ='/'/> : <LoginPage/> } />
         </Switch>
       </div>
