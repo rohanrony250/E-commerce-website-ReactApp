@@ -17,14 +17,21 @@
 
         .header-block
         {
-            text-transform: uppercase;
+            text-transform: capitalize;
             width: 23%;
 
             &:last-child
             {
-                width: 8%;
+                width: 10%;
             }
         }
+    }
+
+    .total
+    {
+        margin-top: 30px;
+        margin-left: auto;
+        font-size: 36px;
     }
 
     
