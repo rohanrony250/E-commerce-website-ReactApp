@@ -14,6 +14,14 @@ export const AddCartItem = item =>
     }
 )
 
+export const ClearCartItem = item =>
+(
+    {
+        type : CartActionTypes.CLEAR_ITEM,
+        payload : item
+    }
+)
+
 export default ToggleCartHidden
 
 
