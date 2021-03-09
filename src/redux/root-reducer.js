@@ -9,7 +9,7 @@ const persistConfig =
 {
     key: "root",
     storage,
-    whitelist: ["cart"]
+    whitelist: ["cart"]// this basically tells what to persist.
 };
 
 const rootReducer = combineReducers({
@@ -19,3 +19,6 @@ const rootReducer = combineReducers({
 });
 
 export default persistReducer(persistConfig, rootReducer);
+
+
+// persistreducer now returns a modified version of rootreducer with persistconfig 

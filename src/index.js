@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom';
 import { Provider } from 'react-redux'; //object that gives access to redux store and reducers must be parent component of our application.
-import store from './redux/store';
+import {store, persistor} from './redux/store';
+import {PersistGate} from 'redux-persist/integration/react'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <PersistGate persistor = {persistor}>
+        <App />
+      </PersistGate>
     </BrowserRouter>    
-  </Provider>
+  </Provider>   
   ,document.getElementById('root')
 ); 
 
