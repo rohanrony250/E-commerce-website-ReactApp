@@ -2,8 +2,8 @@ import React from 'react'
 import MenuItem from '../menu-item/menu.item-component'
 import './menu-styles.scss'
 import { connect } from 'react-redux'
-import {selectMenuItems} from '../../redux/directory/directory-selector'
-import {createStructuredSelector} from 'reselect'
+import { selectMenuItems } from '../../redux/directory/directory-selector'
+import { createStructuredSelector } from 'reselect'
 const MenuComponent = ({items}) =>
 (
     <div className='menu'>
