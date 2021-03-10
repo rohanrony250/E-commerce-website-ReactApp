@@ -1,66 +1,22 @@
 import React from 'react'
 import MenuItem from '../menu-item/menu.item-component'
 import './menu-styles.scss'
-
-class MenuComponent extends React.Component
-{
-    constructor()
-    {
-        super()
-        this.state = 
+import { connect } from 'react-redux'
+import {selectMenuItems} from '../../redux/directory/directory-selector'
+import {createStructuredSelector} from 'reselect'
+const MenuComponent = ({items}) =>
+(
+    <div className='menu'>
         {
-            items: [
-                {
-                    title: 'hats',
-                    imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-                    id: 1,
-                    linkUrl: 'hats'
-                },
-                {
-                    title: 'jackets',
-                    imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-                    id: 2,
-                    linkUrl: ''
-                },
-                {
-                    title: 'sneakers',
-                    imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-                    id: 3,
-                    linkUrl: ''
-                },
-                {
-                    title: 'women',
-                    imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-                    size: 'large',
-                    id: 4,
-                    linkUrl: ''
-                },
-                {
-                    title: 'men',
-                    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-                    size: 'large',
-                    id: 5,
-                    linkUrl: ''
-                }
-            ] 
+            items.map(({id,...otherSectionProps}) =>(
+                <MenuItem key={id} {...otherSectionProps}/>
+            ))
         }
-    }
+    </div> 
+)
 
+const mapStateToProps = createStructuredSelector({
+    items: selectMenuItems
+})
 
-    render()
-    {
-        return(
-            <div className='menu'>
-                {
-                    this.state.items.map(({id,...otherSectionProps}) =>(
-                        <MenuItem key={id} {...otherSectionProps}/>
-                    ))
-                }
-            </div> 
-                 
-        )
-    }
-}
-
-
-export default MenuComponent
+export default connect(mapStateToProps)(MenuComponent)
